@@ -4,6 +4,11 @@ header {
   height: 112px;
 }
 nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: white;
+  z-index: 100;
   font-family: "Manrope", sans-serif;
   font-weight: 500;
   display: flex;
