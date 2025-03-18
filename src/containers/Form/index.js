@@ -32,8 +32,8 @@ const Form = ({ onSuccess, onError }) => {
     <form onSubmit={sendContact}>
       <div className="row">
         <div className="col">
-          <Field placeholder="" label="Nom" />
-          <Field placeholder="" label="Prénom" />
+          <Field placeholder="Saisir votre nom" label="Nom *" required />
+          <Field placeholder="Saisir votre prénom" label="Prénom *" required />
           <Select
             selection={["Personel", "Entreprise"]}
             onChange={() => null}
@@ -41,18 +41,24 @@ const Form = ({ onSuccess, onError }) => {
             type="large"
             titleEmpty
           />
-          <Field placeholder="" label="Email" name="email" required />
+          <Field
+            placeholder="exemple@domaine.com"
+            label="Email *"
+            name="email"
+            required
+          />
         </div>
         <div className="col">
           <Field
-            placeholder="message"
-            label="Message"
+            placeholder="Saisir votre message"
+            label="Message (entre 10 et 500 caractères)"
             type={FIELD_TYPES.TEXTAREA}
             required
             minLength={10}
+            maxLength={500}
           />
         </div>
-      </div>{" "}
+      </div>
       <Button type={BUTTON_TYPES.SUBMIT} disabled={sending}>
         {sending ? "En cours" : "Envoyer"}
       </Button>
