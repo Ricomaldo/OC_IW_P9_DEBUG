@@ -11,7 +11,6 @@ import Icon from "../../components/Icon";
 import Form from "../../containers/Form";
 import Modal from "../../containers/Modal";
 import ModalEvent from "../../containers/ModalEvent";
-
 import { useData } from "../../contexts/DataContext";
 
 const Page = () => {
@@ -117,7 +116,7 @@ const Page = () => {
       <footer className="row">
         <div className="col presta">
           <h3>Notre derniére prestation</h3>
-          {mostRecentEvent && (
+          {mostRecentEvent ? (
             <Modal
               key={mostRecentEvent.id}
               Content={<ModalEvent event={mostRecentEvent} />}
@@ -134,6 +133,8 @@ const Page = () => {
                 />
               )}
             </Modal>
+          ) : (
+            <p>Impossible de charger les dernières prestations</p>
           )}
         </div>
         <div className="col contact">
