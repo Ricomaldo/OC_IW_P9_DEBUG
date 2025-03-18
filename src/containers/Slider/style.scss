@@ -5,6 +5,13 @@
   width: 100%;
   max-width: 1440px;
   height: 586px;
+  overflow: hidden;
+  @media (max-width: 1024px) {
+    height: 416px;
+  }
+  @media (max-width: 768px) {
+    height: 312px;
+  }
   .SlideCard {
     width: 100%;
     left: 0;
@@ -17,6 +24,10 @@
     &--display {
       animation: slide 1s forwards;
     }
+    img {
+      width: 100%;
+      object-fit: cover;
+    }
     &__descriptionContainer {
       position: absolute;
       left: 0;
@@ -24,11 +35,16 @@
       display: flex;
       justify-content: center;
       width: 100%;
+      @media (max-width: 1024px) {
+        justify-content: flex-start;
+        left: 20px;
+        bottom: 20px;
+      }
     }
     &__paginationContainer {
       position: absolute;
       left: 0;
-      bottom: 60px;
+      top: 10px;
       display: flex;
       justify-content: center;
       width: 100%;
@@ -48,6 +64,7 @@
       border-radius: 8px;
       display: flex;
       font-family: "Space Grotesk", sans-serif;
+
       h3 {
         width: 45%;
         border-right: 1px solid #4314ff;
@@ -73,6 +90,25 @@
         font-size: 12px;
         text-transform: uppercase;
         font-weight: bold;
+      }
+
+      @media (max-width: 1024px) {
+        width: 440px;
+        padding: 8px;
+
+        h3 {
+          width: 40%;
+          min-height: 48px;
+
+          font-size: 22px;
+          padding: 8px;
+        }
+
+        p {
+          padding: 8px;
+
+          font-size: 16px; // Réduire la taille de la police
+        }
       }
     }
   }
