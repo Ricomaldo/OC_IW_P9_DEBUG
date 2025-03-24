@@ -25,18 +25,20 @@ export const DataProvider = ({ children }) => {
     try {
       const fetchedData = await api.loadData();
       setData(fetchedData);
-      const recentEvent = fetchedData.events.reduce((last, curr) =>
-        new Date(last.date) > new Date(curr.date) ? last : curr
-      );
-      setMostRecentEvent(recentEvent)
+      const recentEvent = fetchedData.events?.length > 0
+        ? fetchedData.events.reduce((last, curr) =>
+            new Date(last.date) > new Date(curr.date) ? last : curr
+          )
+        : null;
+      setMostRecentEvent(recentEvent);
     } catch (err) {
       setError(err);
     }
   }, []);
+
   useEffect(() => {
-    if (data) return;
     getData();
-  });
+  }, []);
 
   return (
     <DataContext.Provider

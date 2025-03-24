@@ -15,7 +15,7 @@ const data = {
       nb_guesses: 1300,
       periode: "24-25-26 Février",
       prestations: [
-        "1 espace d’exposition",
+        "1 espace d'exposition",
         "1 scéne principale",
         "2 espaces de restaurations",
         "1 site web dédié",
@@ -32,7 +32,7 @@ const data = {
         "Présentation des outils analytics aux professionnels du secteur",
       nb_guesses: 1300,
       periode: "24-25-26 Février",
-      prestations: ["1 espace d’exposition", "1 scéne principale"],
+      prestations: ["1 espace d'exposition", "1 scéne principale"],
     },
   ],
 };
