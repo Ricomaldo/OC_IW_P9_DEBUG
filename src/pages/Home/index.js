@@ -114,8 +114,8 @@ const Page = () => {
         </section>
       </main>
       <footer className="row">
-        <div className="col presta">
-          <h3>Notre derniére prestation</h3>
+        <div className="col presta" data-testid="last-event-vignette">
+          <h3>Notre dernière prestation</h3>
           {mostRecentEvent ? (
             <Modal
               key={mostRecentEvent.id}
